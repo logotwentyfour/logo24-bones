@@ -10,8 +10,8 @@ slow the page load.
 */
 
 // as the page loads, call these scripts
-$(document).ready(function(){
+//jQuery(document).ready(function($) {
 
   // add all your scripts here
 
-}); /* end of as page load scripts */
+//}); /* end of as page load scripts */
