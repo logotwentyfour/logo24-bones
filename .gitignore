@@ -1,6 +1,6 @@
 .htaccess
 .DS_Store
-.sass-cache/*
+library/css/.sass-cache/
 wp-*.php
 xmlrpc.php
 wp-admin/
