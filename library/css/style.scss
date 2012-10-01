@@ -7,6 +7,18 @@
 @import "compass/utilities/general/clearfix";
 @import "compass/typography";
 
+// Use the Web Font Hector Rounded.
+/*@font-face {
+  font-family: 'HectorRounded';
+  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot');
+  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.woff') format('woff'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.ttf') format('truetype'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.svg#hectorrounded') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
 // Other local sass partials
 @import "variables";
 @import "helpers";
@@ -20,17 +32,7 @@ $base-line-height: 24px;
 // Helper: @include adjust-font-size-to(22px);
 
 
-// Use the Web Font Hector Rounded.
-/*@font-face {
-  font-family: 'HectorRounded';
-  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot');
-  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot?#iefix') format('embedded-opentype'),
-       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.woff') format('woff'),
-       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.ttf') format('truetype'),
-       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.svg#hectorrounded') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}*/
+
 
 
 // The Basics
