@@ -1,0 +1,167 @@
+// Make sure to convert px to ems for production.
+
+// Compass Imports
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-sizing";
+@import "compass/utilities/general/clearfix";
+@import "compass/typography";
+
+// Other local sass partials
+@import "variables";
+@import "helpers";
+@import "twitter-bootstrap";
+@import "gridset";
+
+// Compass variables for vertical rhythm
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline;
+// Helper: @include adjust-font-size-to(22px);
+
+
+// Use the Web Font Hector Rounded.
+/*@font-face {
+  font-family: 'HectorRounded';
+  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot');
+  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.woff') format('woff'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.ttf') format('truetype'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.svg#hectorrounded') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+
+// The Basics
+body {
+  //@include primary-typeface;
+  padding: 2em;
+}
+
+p, ul li {
+  color: $primary-text-color;
+}
+
+a, a:link, a:visited {
+  color: $primary-link-color;
+  text-decoration: none;
+  @include transition(all, .2s, ease-in-out);
+  
+  &:hover, &:active, &:focus {
+    color: darken($primary-link-color,6%);
+  }
+}
+
+i {
+  font-style: normal;
+}
+
+strong {
+  font-weight: normal;
+}
+
+.wrapper {
+  @include clearfix;
+  margin: 0 auto;
+  
+  @media only screen and (min-width: 480px) {
+    width: 768px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width: 1024px;
+  }
+}
+
+// <header>
+[role="banner"] {
+  @include clearfix;
+  
+  // The logo
+  h1 {
+    background-image: url('/wp-content/themes/logo24-bones/library/images/logo.png');
+    height: 300px;
+    margin: 0 auto;
+    @extend .ir;
+    width: 300px;
+    
+    @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+      background-image: url('/wp-content/themes/logo24-bones/library/images/logo@2x.png');
+      background-size: 100%;
+    }
+  }
+  
+  // The logo subheading.
+  h2 {
+    @include adjust-font-size-to(22px);
+  }
+}
+
+// 404 Styles
+.p404 {
+  padding-top: 5em;
+  text-align: center;
+  
+  h1 {
+    @include adjust-font-size-to(133px);
+    color: $brand-color;
+    line-height: 1em;
+  }
+  
+  h2 {
+    @include adjust-font-size-to(22px);
+    color: $brand-color;
+    line-height: 1em;
+    margin-bottom: 1.5em;
+  }
+  
+  p {
+    @include adjust-font-size-to(16px);
+    color: $brand-color;
+    line-height: 1.25em;
+  }
+  
+  i {
+    display: block;
+  }
+}
+
+//<footer>
+[role='contentinfo'] {
+  margin: 2em 0;
+  
+  // Plain horizontal list
+  ul {
+    @include no-bullets;
+    @include inline-block-list;
+    margin-left: -1.5em;
+    
+    li {
+      margin-left: 1.5em;
+    }
+  }
+  
+  a, a:link, a:visited {
+    color: $subtle;
+    @include transition(all, .2s, ease-in-out);
+    
+    &:hover, &:active, &:focus {
+      color: $brand-color;
+    }
+  }
+}
+
+// Fix IE7, 8 and 9
+// IE6 is semi-supported by way of a Chrome frame update prompt.
+// and @malarkey's Universal stylesheet.
+
+/*.lt-ie9 {
+
+}*/
+
+//PRINT STYLESHEET
+
+@media print {
+	@import "print";
+}

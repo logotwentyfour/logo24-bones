@@ -1,0 +1,47 @@
+/* Image Replacement */
+.ir {
+  display : block;
+  overflow : hidden;
+  background-repeat : no-repeat;
+  text-align : left;
+  text-indent : -999em;
+  direction : ltr;
+  width: 0;
+}
+
+
+/* Hide Visually */
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static;
+  margin: 0;
+  height: auto;
+  width: auto ;
+  overflow: visible;
+  clip: auto;
+}
+
+// Use our own mixins for Box Shadow and Transitions, because I find them easier 
+// to use than those of Compass.
+@mixin box-shadow($horz, $vert, $blur, $color) {
+  -webkit-box-shadow: $horz $vert $blur $color;
+  -moz-box-shadow: $horz $vert $blur $color;
+  box-shadow: $horz $vert $blur $color;
+}
+
+@mixin transition($property, $duration, $ease) {
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -o-transition: $property $duration $ease;
+  transition: $property $duration $ease;
+}

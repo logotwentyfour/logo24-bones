@@ -1,0 +1,8 @@
+$brand-color: #0b5394; // color description, e.g. Blue
+$primary-text-color: #333;
+$primary-link-color: #555;
+$subtle: lighten($primary-text-color,15%);
+
+@mixin primary-typeface {
+  font-family: Helvetica, Arial, sans-serif;
+}
