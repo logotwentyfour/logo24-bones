@@ -67,3 +67,7 @@
         <h2>Subheading if required</h2>
       </hgroup>
     </header>
+    
+    <nav role="navigation">
+      <?php bones_main_nav(); ?>
+    </nav>
