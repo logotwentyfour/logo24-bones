@@ -1,9 +1,7 @@
   
     <footer role="contentinfo">
       <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-        </ul>
+        <?php bones_footer_links(); ?>
       </nav>
     </footer>
   
