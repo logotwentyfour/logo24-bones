@@ -7,7 +7,7 @@
 @import "compass/utilities/general/clearfix";
 @import "compass/typography";
 
-// Use the Web Font Hector Rounded.
+// Use the Web Font ....
 /*@font-face {
   font-family: 'HectorRounded';
   src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot');
@@ -30,10 +30,6 @@ $base-font-size: 16px;
 $base-line-height: 24px;
 @include establish-baseline;
 // Helper: @include adjust-font-size-to(22px);
-
-
-
-
 
 // The Basics
 body {
