@@ -11,5 +11,8 @@
     
   <!-- all js scripts are loaded in library/bones.php -->
   <?php wp_footer(); ?>
+  
+  <!-- Add the Gridset js overlay here in development -->
+  
 </body>
 </html>
