@@ -35,7 +35,7 @@ $base-line-height: 24px;
 
 // The Basics
 body {
-  //@include primary-typeface;
+  @include primary-typeface;
   padding: 2em;
 }
 
@@ -49,7 +49,7 @@ a, a:link, a:visited {
   @include transition(all, .2s, ease-in-out);
   
   &:hover, &:active, &:focus {
-    color: darken($primary-link-color,6%);
+    color: $brand-color;
   }
 }
 
@@ -81,10 +81,14 @@ strong {
   // The logo
   h1 {
     background-image: url('/wp-content/themes/logo24-bones/library/images/logo.png');
-    height: 300px;
+    height: 150px;
     margin: 0 auto;
     @extend .ir;
-    width: 300px;
+    width: 150px;
+    
+    @media only screen and (min-width: 480px) {
+      margin: 0;
+    }
     
     @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
       background-image: url('/wp-content/themes/logo24-bones/library/images/logo@2x.png');

@@ -123,6 +123,7 @@ html {
 }*/
 /* line 37, style.scss */
 body {
+  font-family: Helvetica, Arial, sans-serif;
   padding: 2em;
 }
 
@@ -142,7 +143,7 @@ a, a:link, a:visited {
 }
 /* line 51, style.scss */
 a:hover, a:active, a:focus, a:link:hover, a:link:active, a:link:focus, a:visited:hover, a:visited:active, a:visited:focus {
-  color: #464646;
+  color: #0b5394;
 }
 
 /* line 56, style.scss */
@@ -182,9 +183,15 @@ strong {
 /* line 82, style.scss */
 [role="banner"] h1 {
   background-image: url("/wp-content/themes/logo24-bones/library/images/logo.png");
-  height: 300px;
+  height: 150px;
   margin: 0 auto;
-  width: 300px;
+  width: 150px;
+}
+@media only screen and (min-width: 480px) {
+  /* line 82, style.scss */
+  [role="banner"] h1 {
+    margin: 0;
+  }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* line 82, style.scss */
@@ -193,25 +200,25 @@ strong {
     background-size: 100%;
   }
 }
-/* line 96, style.scss */
+/* line 100, style.scss */
 [role="banner"] h2 {
   font-size: 1.375em;
   line-height: 2.18182em;
 }
 
-/* line 102, style.scss */
+/* line 106, style.scss */
 .p404 {
   padding-top: 5em;
   text-align: center;
 }
-/* line 106, style.scss */
+/* line 110, style.scss */
 .p404 h1 {
   font-size: 8.3125em;
   line-height: 1.08271em;
   color: #0b5394;
   line-height: 1em;
 }
-/* line 112, style.scss */
+/* line 116, style.scss */
 .p404 h2 {
   font-size: 1.375em;
   line-height: 2.18182em;
@@ -219,23 +226,23 @@ strong {
   line-height: 1em;
   margin-bottom: 1.5em;
 }
-/* line 119, style.scss */
+/* line 123, style.scss */
 .p404 p {
   font-size: 1em;
   line-height: 1.5em;
   color: #0b5394;
   line-height: 1.25em;
 }
-/* line 125, style.scss */
+/* line 129, style.scss */
 .p404 i {
   display: block;
 }
 
-/* line 131, style.scss */
+/* line 135, style.scss */
 [role='contentinfo'] {
   margin: 2em 0;
 }
-/* line 135, style.scss */
+/* line 139, style.scss */
 [role='contentinfo'] ul {
   list-style: none;
   margin: 0;
@@ -264,11 +271,11 @@ strong {
   *display: inline;
   white-space: nowrap;
 }
-/* line 140, style.scss */
+/* line 144, style.scss */
 [role='contentinfo'] ul li {
   margin-left: 1.5em;
 }
-/* line 145, style.scss */
+/* line 149, style.scss */
 [role='contentinfo'] a, [role='contentinfo'] a:link, [role='contentinfo'] a:visited {
   color: #595959;
   -webkit-transition: all 0.2s ease-in-out;
@@ -276,7 +283,7 @@ strong {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 149, style.scss */
+/* line 153, style.scss */
 [role='contentinfo'] a:hover, [role='contentinfo'] a:active, [role='contentinfo'] a:focus, [role='contentinfo'] a:link:hover, [role='contentinfo'] a:link:active, [role='contentinfo'] a:link:focus, [role='contentinfo'] a:visited:hover, [role='contentinfo'] a:visited:active, [role='contentinfo'] a:visited:focus {
   color: #0b5394;
 }
