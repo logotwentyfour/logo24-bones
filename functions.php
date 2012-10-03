@@ -144,7 +144,7 @@ function bones_wpsearch($form) {
 // Admin footer modification
 function remove_footer_admin ()
 {
-    echo '<span id="footer-thankyou">A LOGO24 Production</span>';
+    echo '<span id="footer-thankyou">A <a href="http://logo24.com">LOGO24</a> Production</span>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
