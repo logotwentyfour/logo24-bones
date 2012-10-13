@@ -34,7 +34,6 @@ $base-line-height: 24px;
 // The Basics
 body {
   @include primary-typeface;
-  padding: 2em;
 }
 
 p, ul li {
@@ -62,6 +61,7 @@ strong {
 .wrapper {
   @include clearfix;
   margin: 0 auto;
+  width: 90%;
   
   @media only screen and (min-width: 480px) {
     width: 768px;
