@@ -1,3 +1,7 @@
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
 /* Image Replacement */
 .ir {
   display : block;
@@ -37,6 +41,28 @@
   -webkit-box-shadow: $horz $vert $blur $color;
   -moz-box-shadow: $horz $vert $blur $color;
   box-shadow: $horz $vert $blur $color;
+}
+@mixin box-shadow-inset($setting, $horz, $vert, $blur, $color) {
+  -webkit-box-shadow: $setting $horz $vert $blur $color;
+  -moz-box-shadow: $setting $horz $vert $blur $color;
+  box-shadow: $setting $horz $vert $blur $color;
+}
+
+// instead of adding classes "m-all t-all d-all" for example. This can be mixed.
+@mixin gridset-all {
+  clear: left;
+  float: left;
+  width: 100%;
+}
+
+@mixin hide {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin show {
+  display: block;
+  visibility: visible;
 }
 
 @mixin transition($property, $duration, $ease) {
