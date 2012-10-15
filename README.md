@@ -44,7 +44,7 @@ Try [PXtoEM.com] (http://pxtoem.com/) to help with the calculation.
 
 ## Relative Units
 
-Two helpers are in place to deal with the ``em`` conversion.
+Two helpers are in place to assist with ``px`` to ``em`` conversion.
 
 If an element inherits the ``$base-font-size``, use ``pem()`` to convert pixels to ems. E.g. ``margin-left: 12px`` can become ``margin-left: pem(12px)`` and the 12px will be converted to an em value relative to the ``$base-font-size``
 
