@@ -9,7 +9,7 @@ From terminal or the command line, navigate to ``/library/css`` and run ``compas
 
 CSS commenting is strongly encouraged, try to [SMACSS] (http://smacss.com/) it up.
 
-Do not make changes to ``style.css``. It's compiled from ``style.scss``
+Do not make changes to ``style.css``, it's compiled from ``style.scss``
 
 ## Page Templates
 
@@ -22,7 +22,7 @@ You can keep an eye on the vertical rhythm with the Golden Gridlet from the [Gol
 Note, the Golden Grid System grid is not used.
 
 ## Layouts
-Use Gridset App for layout.
+Use [Gridset] (gridsetapp.com) for layout.
 
 ## Typography
 
@@ -33,10 +33,10 @@ Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.
   - Set breakpoints to content, not to devices widths.
   - Set the width in ems, it seems the em value for media queries is relative to the browser default, 16px, regardless of the base font size we set. So I suggest commenting up as follows:
   
-    // (640px @ 16px)
-    @media only screen and (min-width: 40em) {
-      // Do stuff above 40em
-    }
+  // (640px @ 16px)
+  @media only screen and (min-width: 40em) {
+    // Do stuff above 40em
+  }
     
 Try [PXtoEM.com] (http://pxtoem.com/) to help with the calculation.
 
