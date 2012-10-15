@@ -1,13 +1,13 @@
 logo24-bones
 ============
 
-LOGO24 WP Starter Theme - based on Bones
+LOGO24 WordPress Starter Theme - based on [Bones] (https://github.com/eddiemachado/bones)
 
-This theme uses Compass.
+This theme uses [Compass] (http://compass-style.org/).
 
 From terminal or the command line, navigate to ``/library/css`` and run ``compass watch``.
 
-CSS Commenting is strongly encouraged, try to [SMACSS] (http://smacss.com/) it up.
+CSS commenting is strongly encouraged, try to [SMACSS] (http://smacss.com/) it up.
 
 Do not make changes to ``style.css``. It's compiled from ``style.scss``
 
