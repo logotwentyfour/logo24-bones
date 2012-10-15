@@ -5,11 +5,38 @@ LOGO24 WP Starter Theme - based on Bones
 
 This theme uses Compass.
 
-From terminal or the command line, navigate to logo24-bones/library/css and run ``compass watch``.
+From terminal or the command line, navigate to ``/library/css`` and run ``compass watch``.
+
+CSS Commenting is strongly encouraged, try to [SMACSS] (http://smacss.com/) it up.
+
+Do not make changes to ``style.css``. It's compiled from ``style.scss``
+
+## Page Templates
+
+Two custom page templates are included; ``template-contact.php`` and ``template-single-column``. The contact template includes a sample address marked up using microformats. These can be deleted if not required.
+
+## Golden Grid Gridlet
+
+You can keep an eye on the vertical rhythm with the Golden Gridlet from the [Golden Grid System] (http://goldengridsystem.com/). Edit the base font size and line height values from ``library/js/libs/ggs.js``.
+
+Note, the Golden Grid System grid is not used.
+
+## Layouts
+Use Gridset App for layout.
 
 ## Typography
 
 Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.scss. Compass ``establish-baseline`` will maintain the vertical rhythm based on those variables when the following helper is used to set font size: ``@include adjust-font-size-to(22px)``.
+
+## Media Queries
+  - Basics, only use min-width queries.
+  - Set breakpoints to content, not to devices widths.
+  - Set the width in ems, it seems the em value for media queries is relative to the browser default, 16px, regardless of the base font size we set. So I suggest commenting up as follows:
+  
+    // (640px @ 16px)
+    @media only screen and (min-width: 40em) {
+      // Do stuff above 40em
+    }
 
 ## Relative Units
 
@@ -34,5 +61,3 @@ If an element has a font size other than the ``$base-font-size`` set, e.g. a hea
     See _helpers.scss for more examples.
 
 See [http://mrdanadams.com/2012/pixel-ems-css-conversion-sass-mixin/] (http://mrdanadams.com/2012/pixel-ems-css-conversion-sass-mixin/)
-
-Do not make changes to style.css.
