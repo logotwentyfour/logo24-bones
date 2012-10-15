@@ -37,6 +37,8 @@ Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.
     @media only screen and (min-width: 40em) {
       // Do stuff above 40em
     }
+    
+Try [PXtoEM.com] (http://pxtoem.com/) to help with the calculation.
 
 ## Relative Units
 
