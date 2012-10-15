@@ -141,6 +141,13 @@ function bones_wpsearch($form) {
     return $form;
 } // don't remove this bracket!
 
+// CUSTOM ADMIN LOGIN HEADER LOGO
+function my_custom_login_logo()
+{
+    echo '<style  type="text/css"> #login { padding-top: 57px } .login h1 a {  background-image:url(' . get_bloginfo('template_directory') . '/library/images/logo-admin.gif); height: 150px; width: 150px; background-size: 100% 100%; padding-bottom: 0; margin: 0 auto 1em auto; } </style>';
+}
+add_action('login_head',  'my_custom_login_logo');
+
 // Admin footer modification
 function remove_footer_admin ()
 {

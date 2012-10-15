@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+<!-- None of our own customisation has been done on this yet -->
 			
 			<div id="content">
 			

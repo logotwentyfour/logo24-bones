@@ -1,61 +1,43 @@
 <?php get_header(); ?>
-			
-			<div id="content">
+  <section role="main" class="d2-d4">
 
-				<div id="inner-content" class="wrap clearfix">
-			
-					<div id="main" class="eightcol first clearfix" role="main">
+    <?php while ( have_posts() ) : the_post(); ?>
+      <article id="post-<?php the_ID(); ?>">
+        <header class="entry-header">
+          <h1 class="entry-title"><?php the_title(); ?></h1>
+          <?php if ( 'post' == get_post_type() ) : ?>
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						
-								<header class="article-header">
-							
-									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-							
-									<p class="byline vcard"><?php _e("Posted", "bonestheme"); ?> <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <span class="author"><?php the_author_posts_link(); ?></span> <span class="amp">&amp;</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
-						
-								</header> <!-- end article header -->
-					
-								<section class="entry-content clearfix" itemprop="articleBody">
-									<?php the_content(); ?>
-								</section> <!-- end article section -->
-						
-								<footer class="article-footer">
-			
-									<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
-							
-								</footer> <!-- end article footer -->
-					
-								<?php comments_template(); ?>
-					
-							</article> <!-- end article -->
-					
-						<?php endwhile; ?>			
-					
-						<?php else : ?>
-					
-							<article id="post-not-found" class="hentry clearfix">
-					    		<header class="article-header">
-					    			<h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
-					    		</header>
-					    		<section class="entry-content">
-					    			<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
-					    		</section>
-					    		<footer class="article-footer">
-					    		    <p><?php _e("This is the error message in the single.php template.", "bonestheme"); ?></p>
-					    		</footer>
-							</article>
-					
-						<?php endif; ?>
-			
-					</div> <!-- end #main -->
-    
-					<?php get_sidebar(); ?>
+          <div class="entry-meta">
+            <div class="post-author">
+              <a href="<?php echo get_the_author_meta( 'user_url' ); ?>" title="Learn more about me"><?php the_author() ?></a>
+            <?php read_time(); ?>
+            </div>
+            <div class="topics">
+              <h3>Topics:</h3> <?php echo get_the_category_list(); ?>
+            </div>
+          </div>
 
-				</div> <!-- end #inner-content -->
-    
-			</div> <!-- end #content -->
+          <?php endif; ?>
+        </header>
+
+        <div class="entry-content">
+          <?php the_content(); ?>
+        </div>
+
+        <div class="entry-utility">
+          <time pubdate datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F j Y'); ?></time>
+        </div>
+      </article>
+  
+      <nav id="nav-blog">
+        <span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'twentyeleven' ) ); ?></span>
+        <span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></span>
+      </nav>
+
+      <?php comments_template(); ?>
+
+    <?php endwhile; // end of the loop. ?>
+
+  </section>
 
 <?php get_footer(); ?>

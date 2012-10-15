@@ -15,9 +15,9 @@ Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.
 
 Two helpers are in place to deal with the ``em`` conversion.
 
-If an element inherits the ``$base-font-size``, use ``pem()`` to convert pixels to ems. E.g. ``margin-left: 12px`` can become ``margin-left: pem(12px)`` and the 12px will be converted to an em value with relative to the ``$base-font-size``
+If an element inherits the ``$base-font-size``, use ``pem()`` to convert pixels to ems. E.g. ``margin-left: 12px`` can become ``margin-left: pem(12px)`` and the 12px will be converted to an em value relative to the ``$base-font-size``
 
-If an element has a font size other than the ``$base-font-size`` set, e.g. a heading, then the ``@include scale()`` helper can be used. E.g.
+If an element has a font size other than the ``$base-font-size`` set, e.g. a heading, then the ``@include scale()`` helper can be used with the new font size specified. E.g.
 
     // Base font size inherited
     .p {
