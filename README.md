@@ -35,14 +35,12 @@ Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.
 
 Break
 
-  (640px @ 16px)
-  @media only screen and (min-width: 40em) {
+    (640px @ 16px)
+    @media only screen and (min-width: 40em) {
       // Do stuff above 40em
-  }
+    }
   
     Some code
-  
-  some code
 
 Try [PXtoEM.com] (http://pxtoem.com/) to help with the calculation.
 
