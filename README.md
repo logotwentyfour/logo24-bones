@@ -33,6 +33,7 @@ Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.
   - Set breakpoints to content, not to devices widths.
   - Set the width in ems, it seems the em value for media queries is relative to the browser default, 16px, regardless of the base font size we set. So I suggest commenting up as follows
 
+ 
     (640px @ 16px)
     @media only screen and (min-width: 40em) {
       // Do stuff above 40em
