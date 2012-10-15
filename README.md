@@ -9,7 +9,7 @@ From terminal or the command line, navigate to logo24-bones/library/css and run 
 
 ## Typography
 
-Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.scss. Compass ``establish-baseline`` is will keep the vertical rhythm based on those variables when the following helper is used to set font size: ``@include adjust-font-size-to(22px)``.
+Start off by setting the ``$base-font-size`` and ``$base-line-height`` in style.scss. Compass ``establish-baseline`` will maintain the vertical rhythm based on those variables when the following helper is used to set font size: ``@include adjust-font-size-to(22px)``.
 
 ## Relative Units
 
