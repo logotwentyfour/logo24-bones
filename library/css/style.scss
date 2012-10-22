@@ -100,6 +100,41 @@ strong {
   }
 }
 
+// Line up main menu horizontally
+.nav {
+  li {
+    display: inline;
+    position: relative;
+    
+    // open the sub menu
+    &:hover {
+      .sub-menu {
+        display: block;
+      }
+    }
+    a, a:link, a:visited {
+      @include inline-block;
+      padding: pem(7px) pem(18px);
+    }
+    
+    a:hover, a:focus, a:active {
+      background: $secondary-color;
+    }
+  }
+}
+
+// Hide sub menu by default
+.sub-menu {
+  display: none;
+  float: left;
+  margin: 0;
+  position: absolute;
+  text-align: left;
+  left: 0;
+  width: pem(200px); // Adjust this value as required.
+  z-index: 99999;
+}
+
 // 404 Styles
 .p404 {
   padding-top: 5em;
