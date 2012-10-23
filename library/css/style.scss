@@ -64,11 +64,11 @@ strong {
   width: 90%;
   
   @media only screen and (min-width: 480px) {
-    width: 768px;
+    max-width: 768px;
   }
   
   @media only screen and (min-width: 768px) {
-    width: 1024px;
+    max-width: 1024px;
   }
 }
 
