@@ -31,6 +31,11 @@ $base-line-height: 24px;
 @include establish-baseline;
 // Helper: @include adjust-font-size-to(22px);
 
+// http://paulirish.com/2012/box-sizing-border-box-ftw/
+* {
+  @include box-sizing(border-box);
+}
+
 // The Basics
 body {
   @include primary-typeface;
