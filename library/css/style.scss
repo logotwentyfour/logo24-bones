@@ -39,21 +39,20 @@ $base-line-height: 24px;
 
 // The Basics
 body {
-  @include primary-typeface;
+  @include regular-type;
 }
 
 p, ul li {
-  color: $primary-text-color;
+  color: $text-color;
 }
 
 a, a:link, a:visited {
-  color: $primary-link-color;
+  color: $link-color;
   text-decoration: none;
   @include transition(all, .2s, ease-in-out);
-  
-  &:hover, &:active, &:focus {
-    color: $brand-color;
-  }
+}
+a:hover, a:focus, a:active {
+  color: $brand-color;
 }
 
 i {
@@ -69,11 +68,13 @@ strong {
   margin: 0 auto;
   width: 90%;
   
-  @media only screen and (min-width: 480px) {
+  // (480 @ 16px)
+  @media only screen and (min-width: 30em) {
     max-width: 768px;
   }
   
-  @media only screen and (min-width: 768px) {
+  // (768px @ 16px)
+  @media only screen and (min-width: 48em) {
     max-width: 1024px;
   }
 }
@@ -84,20 +85,20 @@ strong {
   
   // The logo
   h1 {
-    background-image: url('/wp-content/themes/logo24-bones/library/images/logo.png');
     height: 150px;
     margin: 0 auto;
-    @extend .ir;
+    @extend .ir; // Hide the text and show a css background image instead
     width: 150px;
     
-    @media only screen and (min-width: 480px) {
+    // The logo is centred by default on small screens.
+    // Above 480px left align
+    
+    // (480 @ 16px)
+    @media only screen and (min-width: 30em) {
       margin: 0;
     }
     
-    @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
-      background-image: url('/wp-content/themes/logo24-bones/library/images/logo@2x.png');
-      background-size: 100%;
-    }
+    @include image-2x-png(logo, 150px, 150px);
   }
   
   // The logo subheading.
@@ -106,40 +107,7 @@ strong {
   }
 }
 
-// Line up main menu horizontally
-.nav {
-  li {
-    display: inline;
-    position: relative;
-    
-    // open the sub menu
-    &:hover {
-      .sub-menu {
-        display: block;
-      }
-    }
-    a, a:link, a:visited {
-      @include inline-block;
-      padding: pem(7px) pem(18px);
-    }
-    
-    a:hover, a:focus, a:active {
-      background: $secondary-color;
-    }
-  }
-}
-
-// Hide sub menu by default
-.sub-menu {
-  display: none;
-  float: left;
-  margin: 0;
-  position: absolute;
-  text-align: left;
-  left: 0;
-  width: pem(200px); // Adjust this value as required.
-  z-index: 99999;
-}
+@import 'navigation';
 
 // 404 Styles
 .p404 {
@@ -186,12 +154,11 @@ strong {
   }
   
   a, a:link, a:visited {
-    color: $subtle;
+    color: lighten($link-color, 20%);
     @include transition(all, .2s, ease-in-out);
-    
-    &:hover, &:active, &:focus {
-      color: $brand-color;
-    }
+  }
+  a:hover, a:focus, a:active {
+    color: $brand-color;
   }
 }
 

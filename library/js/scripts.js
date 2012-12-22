@@ -10,8 +10,12 @@ slow the page load.
 */
 
 // as the page loads, call these scripts
-//jQuery(document).ready(function($) {
-
-  // add all your scripts here
-
-//}); /* end of as page load scripts */
+jQuery(document).ready(function($) {
+  $(".entry-content").fitVids();
+  
+  // Toggle navigation visibility on small screens and the toggle icon.
+  $(".open-navigation").click(function () {
+    $(".top-nav").fadeToggle(100, "linear");
+      return false;
+  });
+}); /* end of as page load scripts */

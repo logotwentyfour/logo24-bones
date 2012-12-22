@@ -14,7 +14,6 @@
   <!-- Google Chrome Frame for IE -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <!-- mobile meta (hooray!) -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -58,16 +57,26 @@
   
     <header role="banner">
       <hgroup>
-        <a href="/" title="Return to the home page">
-          <h1>
-            Website name
-            <img src="<?php bloginfo('template_directory'); ?>/library/images/logo@2x.png" alt="Website name" class="visually-hidden"/>
-          </h1>
-        </a>
+        <h1>
+          <a href="/" title="Return to the home page">
+            Make sure to update with the website name!
+          </a>
+        </h1>
         <h2>Subheading if required</h2>
       </hgroup>
+      
+      <?php /* if no subheading is required you can use this:
+      
+      <h1>
+        <a href="/" title="Return to the home page">
+          Make sure to update with the website name!
+        </a>
+      </h1>
+      
+      */ ?>
     </header>
     
     <nav role="navigation">
+      <a href="#menu-main" class="open-navigation" title="Open navigation">Navigation</a>
       <?php bones_main_nav(); ?>
     </nav>
