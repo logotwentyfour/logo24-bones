@@ -3,6 +3,6 @@ $secondary-color: darken(#0b5394, 10%);
 $text-color: #333;
 $link-color: #00e;
 
-@mixin regular-type {
+@mixin type-regular {
   font-family: Helvetica, Arial, sans-serif;
 }

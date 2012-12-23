@@ -40,7 +40,8 @@ $base-line-height: 24px;
 // The Basics
 body {
   color: $text-color;
-  @include regular-type;
+  margin-bottom: 0.5em;
+  @include type-regular;
 }
 
 
@@ -216,6 +217,8 @@ td {
 }
 
 @import 'navigation';
+
+@import 'contact-form';
 
 // 404 Styles
 .p404 {

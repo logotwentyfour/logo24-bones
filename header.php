@@ -33,9 +33,9 @@
 
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-  <!-- wordpress head functions -->
+  <?php # wordpress head functions ?>
   <?php wp_head(); ?>
-  <!-- end of wordpress head -->
+  <?php # end of wordpress head ?>
   
   <!--[if ! lte IE 6]><!-->
   <!-- Gridset hosted CSS goes here in development -->
