@@ -11,7 +11,6 @@ slow the page load.
 
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
-  $(".entry-content").fitVids();
   
   // Toggle navigation visibility on small screens and the toggle icon.
   $(".open-navigation").click(function () {

@@ -5,7 +5,6 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-sizing";
 @import "compass/css3/opacity";
-@import "compass/utilities/general/clearfix";
 @import "compass/typography";
 
 // Use the Web Font ....
@@ -37,15 +36,89 @@ $base-line-height: 24px;
   @include box-sizing(border-box);
 }
 
+
 // The Basics
 body {
+  color: $text-color;
   @include regular-type;
 }
 
-p, ul li {
-  color: $text-color;
+
+// General base text stuff.
+h1 {
+  @include adjust-font-size-to(36px);
 }
 
+h2 {
+  @include adjust-font-size-to(28px);
+}
+
+h3 {
+  @include adjust-font-size-to(24px);
+}
+
+h4 {
+  @include adjust-font-size-to(18px);
+  font-weight: bold;
+}
+
+h5 {
+  @include adjust-font-size-to(18px);
+  text-transform: uppercase;
+}
+
+h6 {
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  & + p, & + ul, & + ol  {
+    margin-top: 1em;
+  }
+}
+
+p, ul, ol {
+  margin: 1.5em 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+dt {
+  font-style: italic;
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 1.5em;
+  margin-left: 1em;
+}
+
+// GitHub inspired
+pre {
+  background-color: #F8F8F8;
+  border: 1px solid #CCC;
+  overflow: auto;
+  padding: pem(6px) pem(10px);
+  @include border-radius(3px);
+}
+
+// <p> lead paragraph
+.lead {
+  @include adjust-font-size-to(20px);
+}
+
+blockquote {
+  margin-left: 2em;
+  font-style: italic;
+}
+
+// Base links
 a, a:link, a:visited {
   color: $link-color;
   text-decoration: none;
@@ -63,8 +136,35 @@ strong {
   font-weight: normal;
 }
 
+small {
+  @include adjust-font-size-to(12px);
+  display: block;
+  margin: 1em 0;
+}
+
+// Tables (GitHub inspired default again)
+tr {
+  border-top: 1px solid #CCC;
+  background-color: white;
+  
+  // Alternate background color of every second line.
+  &:nth-child(2n) {
+  background-color: #F8F8F8;
+  }
+}
+
+th {
+  border: 1px solid #CCC;
+  font-weight: bold;
+  padding: pem(6px) pem(13px);
+}
+
+td {
+  border: 1px solid #CCC;
+  padding: pem(6px) pem(13px);
+}
+
 .wrapper {
-  @include clearfix;
   margin: 0 auto;
   width: 90%;
   
@@ -82,6 +182,7 @@ strong {
 // <header>
 [role="banner"] {
   @include clearfix;
+  margin: 1em 0;
   
   // The logo
   h1 {
@@ -96,6 +197,13 @@ strong {
     // (480 @ 16px)
     @media only screen and (min-width: 30em) {
       margin: 0;
+    }
+    
+    // Make subheading sit in line with the heading from medium screens and up.
+    // (768px @ 16px)
+    @media only screen and (min-width: 48em) {
+      float: left;
+      margin-right: 1em;
     }
     
     @include image-2x-png(logo, 150px, 150px);
@@ -141,25 +249,6 @@ strong {
 //<footer>
 [role='contentinfo'] {
   margin: 2em 0;
-  
-  // Plain horizontal list
-  ul {
-    @include no-bullets;
-    @include inline-block-list;
-    margin-left: -1.5em;
-    
-    li {
-      margin-left: 1.5em;
-    }
-  }
-  
-  a, a:link, a:visited {
-    color: lighten($link-color, 20%);
-    @include transition(all, .2s, ease-in-out);
-  }
-  a:hover, a:focus, a:active {
-    color: $brand-color;
-  }
 }
 
 // Fix IE7, 8 and 9

@@ -62,7 +62,7 @@
             Make sure to update with the website name!
           </a>
         </h1>
-        <h2>Subheading if required</h2>
+        <h2>Subheading (if required)</h2>
       </hgroup>
       
       <?php /* if no subheading is required you can use this:

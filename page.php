@@ -13,6 +13,4 @@
     <p>Whatever you were trying, it didn't work...</p>
   <?php endif; ?>
 
-<?php get_sidebar(); ?>
-
 <?php get_footer(); ?>
