@@ -3,19 +3,19 @@
       <nav>
         <?php bones_footer_links(); ?>
       </nav>
-      <?php /* footer stuff, defaults to copyright
-        
-        # Need to figure out how to do proper taxonomies for this.
-        
-        query_posts('p=771');
-        if(have_posts()):
-          while(have_posts()): the_post();
-            the_content();
-          endwhile;
-        endif;
-        wp_reset_query();*/
+      
+      <small>
+      <?php
+      query_posts('p=45');
+      if(have_posts()):
+        while(have_posts()): the_post();
+          the_content();
+        endwhile;
+      endif;
+      wp_reset_query();
       ?>
-      <small><p>&copy Copyright (output current year). (Output client name). All rights reserved.</p></small>
+      </small>
+      
     </footer>
   
   </div> <?php # /wrapper ?>

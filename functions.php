@@ -55,9 +55,9 @@ you like. Enjoy!
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
     register_sidebar(array(
-    	'id' => 'sidebar1',
-    	'name' => 'Sidebar 1',
-    	'description' => 'The first (primary) sidebar.',
+    	'id' => 'blog',
+    	'name' => 'Blog',
+    	'description' => 'For the blog index and show.',
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -154,5 +154,132 @@ function remove_footer_admin ()
     echo '<span id="footer-thankyou">A <a href="http://logo24.com">LOGO24</a> Production</span>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
+
+// Add new 'Phone' textfield to General Settings
+$new_general_setting = new new_general_setting();
+ 
+class new_general_setting {
+    function new_general_setting( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'phone', 'esc_attr' );
+        add_settings_field('phone', '<label for="phone">'.__('Phone' , 'phone' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+    }
+    function fields_html() {
+        $value = get_option( 'phone', '' );
+        echo '<input type="text" id="phone" name="phone" value="' . $value . '" />';
+    }
+}
+
+// Add new 'Street' textfield to General Settings
+$new_general_setting2 = new new_general_setting2();
+ 
+class new_general_setting2 {
+    function new_general_setting2( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'street', 'esc_attr' );
+        add_settings_field('street', '<label for="street">'.__('Street' , 'street' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+    }
+    function fields_html() {
+        $value = get_option( 'street', '' );
+        echo '<input type="text" id="street" name="street" value="' . $value . '" />';
+    }
+}
+
+// Add new 'Street line 2' textfield to General Settings
+$new_general_setting3 = new new_general_setting3();
+ 
+class new_general_setting3 {
+    function new_general_setting3( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'street2', 'esc_attr' );
+        add_settings_field('street2', '<label for="street2">'.__('Street line 2' , 'street2' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+    }
+    function fields_html() {
+        $value = get_option( 'street2', '' );
+        echo '<input type="text" id="street2" name="street2" value="' . $value . '" />';
+    }
+}
+
+// Add new 'Town/City' textfield to General Settings
+$new_general_setting4 = new new_general_setting4();
+ 
+class new_general_setting4 {
+    function new_general_setting4( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'town', 'esc_attr' );
+        add_settings_field('town', '<label for="town">'.__('Town/City' , 'town' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+    }
+    function fields_html() {
+        $value = get_option( 'town', '' );
+        echo '<input type="text" id="town" name="town" value="' . $value . '" />';
+    }
+}
+
+// Add new 'County/State' textfield to General Settings
+$new_general_setting5 = new new_general_setting5();
+ 
+class new_general_setting5 {
+    function new_general_setting5( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'county', 'esc_attr' );
+        add_settings_field('county', '<label for="county">'.__('County/State' , 'county' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+    }
+    function fields_html() {
+        $value = get_option( 'county', '' );
+        echo '<input type="text" id="county" name="county" value="' . $value . '" />';
+    }
+}
+
+// Add new 'Postal Code' textfield to General Settings
+$new_general_setting = new new_general_setting6();
+ 
+class new_general_setting6 {
+    function new_general_setting6( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'postal-code', 'esc_attr' );
+        add_settings_field('postal-code', '<label for="postal-code">'.__('Postal Code' , 'postal-code' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+    }
+    function fields_html() {
+        $value = get_option( 'postal-code', '' );
+        echo '<input type="text" id="postal-code" name="postal-code" value="' . $value . '" />';
+    }
+}
+
+// Add new 'Country' textfield to General Settings
+$new_general_setting7 = new new_general_setting7();
+ 
+class new_general_setting7 {
+    function new_general_setting7( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'country', 'esc_attr' );
+        add_settings_field('country', '<label for="country">'.__('Country' , 'country' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+
+    }
+    function fields_html() {
+        $value = get_option( 'country', '' );
+        echo '<input type="text" id="country" name="country" value="' . $value . '" />';
+    }
+}
+
 
 ?>

@@ -59,10 +59,10 @@
       <hgroup>
         <h1>
           <a href="/" title="Return to the home page">
-            Make sure to update with the website name!
+            <?php bloginfo('name'); ?>
           </a>
         </h1>
-        <h2>Subheading (if required)</h2>
+        <h2><?php bloginfo('description'); ?></h2>
       </hgroup>
       
       <?php /* if no subheading is required you can use this:

@@ -1,8 +1,8 @@
-<section id="sidebar1" role="complementary">
+<section id="blog" role="complementary">
 
-  <?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+  <?php if ( is_active_sidebar( 'blog' ) ) : ?>
 
-    <?php dynamic_sidebar( 'sidebar1' ); ?>
+    <?php dynamic_sidebar( 'blog' ); ?>
 
   <?php else : ?>
 

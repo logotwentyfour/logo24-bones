@@ -1,55 +1,78 @@
 <?php get_header(); ?>
 
-  <section role="main" class="d2-d4">
+<section role="main">
 
-    <?php if ( have_posts() ) : ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <header>
-      <h1 class="vh">The blog of Some Company</h1>
-    </header>
+    <article id="post-<?php the_ID(); ?>" class="index-article" role="article">
 
-    <?php while ( have_posts() ) : the_post(); ?>
-
-    <article id="post-<?php the_ID(); ?>" class="index-article">
-      <header class="entry-header">
-        <a href='<?php the_permalink() ?>'
-        rel='bookmark' title='<?php the_title(); ?>'>
-          <h1 class="entry-title"><?php the_title(); ?></h1>
-        </a>
+      <div>
+      
+        <div class="featured-image">
+          <?php if ( has_post_thumbnail() ) { ?>
+            <a href='<?php the_permalink() ?>'
+            rel='bookmark' title='<?php the_title(); ?>'>
+              <figure>
+                 <?php the_post_thumbnail(); ?>
+              </figure>
+            </a>
+          <?php } ?>
+        </div>
         
-        <?php if ( 'post' == get_post_type() ) : ?>
+        <div class="entry-body">
+          <header class="entry-header">
+            <a href='<?php the_permalink() ?>'
+            rel='bookmark' title='<?php the_title(); ?>'>
+              <h1 class="entry-title"><?php the_title(); ?></h1>
+            </a>
+          </header><?php # .entry-header ?>
         
-        <div class="entry-meta">
-          <div class="post-author">
-            <a href="<?php echo get_the_author_meta( 'user_url' ); ?>" title="Learn more about me"><?php the_author() ?></a>
+          <div class="entry-content">
+            <?php the_excerpt(); ?>
+          </div><?php # .entry-content ?>
+        
+          <div class="byline vcard">
+            Published by
+            <span class="author"><?php the_author(); ?></span> on
+            <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time>
+            <br>Topics:
+            <?php the_category(', '); ?>
             <?php read_time(); ?>
           </div>
-          <div class="topics">
-            <h3>Topics:</h3> <?php echo get_the_category_list(); ?>
-          </div>
-        </div><!-- .entry-meta -->
+        </div>
         
-        <?php endif; ?>
-      </header><!-- .entry-header -->
-
-      <div class="entry-content">
-        <?php the_excerpt(); ?>
-      </div><!-- .entry-content -->
-
-      <div class="entry-utility">
-        Written <time pubdate datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F j Y'); ?></time>
       </div>
+      
     </article>
+    
+  <?php endwhile; ?>
+  
+  <?php if (function_exists('bones_page_navi')) { ?>
+    <?php bones_page_navi(); ?>
+    <?php } else { ?>
+      <nav class="wp-prev-next">
+        <ul class="clearfix">
+          <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
+          <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
+        </ul>
+      </nav>
+    <?php } ?>
+  <?php else : ?>
+  
+  <article id="post-not-found" class="hentry clearfix">
+    <header class="article-header">
+      <h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
+    </header>
+    <section class="entry-content">
+      <p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
+    </section>
+    <footer class="article-footer">
+      <p><?php _e("This is the error message in the index.php template.", "bonestheme"); ?></p>
+    </footer>
+  </article>
+    
+  <?php endif; ?>
 
-    <?php endwhile; ?>
-
-    <nav id="nav-blog">
-      <span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'twentyeleven' ) ); ?></span>
-      <span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></span>
-    </nav>
-
-    <?php endif; ?>
-
-  </section>
+</section>
 
 <?php get_footer(); ?>

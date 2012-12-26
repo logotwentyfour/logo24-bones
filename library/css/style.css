@@ -90,7 +90,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 8, _helpers.scss */
-.ir, [role="banner"] h1 {
+.ir, [role="banner"] h1 a {
   display: block;
   overflow: hidden;
   background-repeat: no-repeat;
@@ -226,7 +226,7 @@ html {
 /* line 41, style.scss */
 body {
   color: #333333;
-  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -338,18 +338,24 @@ a, a:link, a:visited {
 a:hover, a:focus, a:active {
   color: #0b5394;
 }
+/* line 131, style.scss */
+a:hover img, a:focus img, a:active img {
+  -webkit-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
+}
 
-/* line 132, style.scss */
+/* line 136, style.scss */
 i {
   font-style: normal;
 }
 
-/* line 136, style.scss */
+/* line 140, style.scss */
 strong {
   font-weight: normal;
 }
 
-/* line 140, style.scss */
+/* line 144, style.scss */
 small {
   font-size: 0.75em;
   line-height: 2em;
@@ -357,82 +363,96 @@ small {
   margin: 1em 0;
 }
 
-/* line 147, style.scss */
+/* line 150, style.scss */
+figure {
+  text-align: center;
+}
+
+/* line 154, style.scss */
+img {
+  max-width: 100%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 160, style.scss */
 tr {
   border-top: 1px solid #CCC;
   background-color: white;
 }
-/* line 152, style.scss */
+/* line 165, style.scss */
 tr:nth-child(2n) {
   background-color: #F8F8F8;
 }
 
-/* line 157, style.scss */
+/* line 170, style.scss */
 th {
   border: 1px solid #CCC;
   font-weight: bold;
   padding: 0.375em 0.8125em;
 }
 
-/* line 163, style.scss */
+/* line 176, style.scss */
 td {
   border: 1px solid #CCC;
   padding: 0.375em 0.8125em;
 }
 
-/* line 168, style.scss */
+/* line 181, style.scss */
 .wrapper {
   margin: 0 auto;
   width: 90%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 168, style.scss */
+  /* line 181, style.scss */
   .wrapper {
     max-width: 768px;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 168, style.scss */
+  /* line 181, style.scss */
   .wrapper {
     max-width: 1024px;
   }
 }
 
-/* line 184, style.scss */
+/* line 197, style.scss */
 [role="banner"] {
   overflow: hidden;
   *zoom: 1;
   margin: 1em 0;
 }
-/* line 189, style.scss */
-[role="banner"] h1 {
+/* line 203, style.scss */
+[role="banner"] h1 a {
   height: 150px;
   margin: 0 auto;
   width: 150px;
   background: url("/wp-content/themes/logo24-bones/library/images/logo.png") no-repeat;
 }
 @media only screen and (min-width: 30em) {
-  /* line 189, style.scss */
-  [role="banner"] h1 {
+  /* line 203, style.scss */
+  [role="banner"] h1 a {
     margin: 0;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 189, style.scss */
-  [role="banner"] h1 {
+  /* line 203, style.scss */
+  [role="banner"] h1 a {
     float: left;
     margin-right: 1em;
   }
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-  /* line 189, style.scss */
-  [role="banner"] h1 {
+  /* line 203, style.scss */
+  [role="banner"] h1 a {
     /* on retina, use image that's scaled by 2 */
     background: url("/wp-content/themes/logo24-bones/library/images/logo@2x.png") no-repeat;
     background-size: 150px 150px;
   }
 }
-/* line 214, style.scss */
+/* line 229, style.scss */
 [role="banner"] h2 {
   font-size: 1.375em;
   line-height: 2.18182em;
@@ -761,19 +781,50 @@ div.wpcf7-validation-errors, span.wpcf7-not-valid-tip {
   padding: 0.5em 1em;
 }
 
-/* line 224, style.scss */
+/* line 241, style.scss */
+article {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 246, style.scss */
+.featured-image {
+  float: left;
+  margin-top: 3.3125em;
+  padding-right: 2.5em;
+  width: 20%;
+}
+
+/* line 254, style.scss */
+.entry-content > p:first-child {
+  margin-top: 0;
+}
+
+/* line 260, style.scss */
+.entry-body {
+  float: left;
+  width: 79%;
+}
+
+/* line 265, style.scss */
+.byline {
+  font-size: 0.75em;
+  line-height: 2em;
+}
+
+/* line 271, style.scss */
 .p404 {
   padding-top: 5em;
   text-align: center;
 }
-/* line 228, style.scss */
+/* line 275, style.scss */
 .p404 h1 {
   font-size: 8.3125em;
   line-height: 1.08271em;
   color: #0b5394;
   line-height: 1em;
 }
-/* line 234, style.scss */
+/* line 281, style.scss */
 .p404 h2 {
   font-size: 1.375em;
   line-height: 2.18182em;
@@ -781,19 +832,19 @@ div.wpcf7-validation-errors, span.wpcf7-not-valid-tip {
   line-height: 1em;
   margin-bottom: 1.5em;
 }
-/* line 241, style.scss */
+/* line 288, style.scss */
 .p404 p {
   font-size: 1em;
   line-height: 1.5em;
   color: #0b5394;
   line-height: 1.25em;
 }
-/* line 247, style.scss */
+/* line 294, style.scss */
 .p404 i {
   display: block;
 }
 
-/* line 253, style.scss */
+/* line 300, style.scss */
 [role='contentinfo'] {
   margin: 2em 0;
 }
@@ -837,7 +888,7 @@ div.wpcf7-validation-errors, span.wpcf7-not-valid-tip {
   }
 
   /* line 40, _print.scss */
-  .ir a:after, [role="banner"] h1 a:after,
+  .ir a:after, [role="banner"] h1 a a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";

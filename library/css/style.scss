@@ -40,7 +40,7 @@ $base-line-height: 24px;
 // The Basics
 body {
   color: $text-color;
-  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
   @include type-regular;
 }
 
@@ -127,6 +127,10 @@ a, a:link, a:visited {
 }
 a:hover, a:focus, a:active {
   color: $brand-color;
+  
+  img {
+    @include box-shadow(0px, 1px, 7px, rgba(0, 0, 0, 0.3));
+  }
 }
 
 i {
@@ -141,6 +145,15 @@ small {
   @include adjust-font-size-to(12px);
   display: block;
   margin: 1em 0;
+}
+
+figure {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  @include transition(all, .2s, ease-in-out);
 }
 
 // Tables (GitHub inspired default again)
@@ -187,27 +200,29 @@ td {
   
   // The logo
   h1 {
-    height: 150px;
-    margin: 0 auto;
-    @extend .ir; // Hide the text and show a css background image instead
-    width: 150px;
-    
-    // The logo is centred by default on small screens.
-    // Above 480px left align
-    
-    // (480 @ 16px)
-    @media only screen and (min-width: 30em) {
-      margin: 0;
+    a {
+      height: 150px;
+      margin: 0 auto;
+      @extend .ir; // Hide the text and show a css background image instead
+      width: 150px;
+
+      // The logo is centred by default on small screens.
+      // Above 480px left align
+
+      // (480 @ 16px)
+      @media only screen and (min-width: 30em) {
+        margin: 0;
+      }
+
+      // Make subheading sit in line with the heading from medium screens and up.
+      // (768px @ 16px)
+      @media only screen and (min-width: 48em) {
+        float: left;
+        margin-right: 1em;
+      }
+
+      @include image-2x-png(logo, 150px, 150px);
     }
-    
-    // Make subheading sit in line with the heading from medium screens and up.
-    // (768px @ 16px)
-    @media only screen and (min-width: 48em) {
-      float: left;
-      margin-right: 1em;
-    }
-    
-    @include image-2x-png(logo, 150px, 150px);
   }
   
   // The logo subheading.
@@ -219,6 +234,38 @@ td {
 @import 'navigation';
 
 @import 'contact-form';
+
+
+// Blog Styles
+
+article {
+  @include clearfix;
+}
+
+// <div> Appears on blog#show—index.php in the theme folder
+.featured-image {
+  float: left;
+  margin-top: pem(53px);
+  padding-right: pem(40px);
+  width: 20%;
+}
+
+.entry-content {
+  & > p:first-child {
+    margin-top: 0;
+  }
+}
+
+// <div> Wraps .entry-content and .byline on blog#show—index.php
+.entry-body {
+  float: left;
+  width: 79%;
+}
+
+.byline {
+  @include adjust-font-size-to(12px);
+}
+
 
 // 404 Styles
 .p404 {
