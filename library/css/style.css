@@ -269,39 +269,43 @@ h6 {
   font-weight: bold;
 }
 
-/* line 71, style.scss */
+/* line 70, style.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #0b5394;
+}
+/* line 73, style.scss */
 h1 + p, h1 + ul, h1 + ol, h2 + p, h2 + ul, h2 + ol, h3 + p, h3 + ul, h3 + ol, h4 + p, h4 + ul, h4 + ol, h5 + p, h5 + ul, h5 + ol, h6 + p, h6 + ul, h6 + ol {
   margin-top: 1em;
 }
 
-/* line 76, style.scss */
+/* line 78, style.scss */
 p, ul, ol {
   margin: 1.5em 0;
 }
 
-/* line 80, style.scss */
+/* line 82, style.scss */
 ul {
   list-style: disc;
 }
 
-/* line 84, style.scss */
+/* line 86, style.scss */
 ol {
   list-style: decimal;
 }
 
-/* line 88, style.scss */
+/* line 90, style.scss */
 dt {
   font-style: italic;
   font-weight: bold;
 }
 
-/* line 93, style.scss */
+/* line 95, style.scss */
 dd {
   margin-bottom: 1.5em;
   margin-left: 1em;
 }
 
-/* line 99, style.scss */
+/* line 101, style.scss */
 pre {
   background-color: #F8F8F8;
   border: 1px solid #CCC;
@@ -314,19 +318,19 @@ pre {
   border-radius: 3px;
 }
 
-/* line 108, style.scss */
+/* line 110, style.scss */
 .lead {
   font-size: 1.25em;
   line-height: 1.2em;
 }
 
-/* line 112, style.scss */
+/* line 114, style.scss */
 blockquote {
   margin-left: 2em;
   font-style: italic;
 }
 
-/* line 118, style.scss */
+/* line 120, style.scss */
 a, a:link, a:visited {
   color: #0b5394;
   text-decoration: none;
@@ -336,28 +340,28 @@ a, a:link, a:visited {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 123, style.scss */
+/* line 125, style.scss */
 a:hover, a:focus, a:active {
   color: #062b4d;
 }
-/* line 126, style.scss */
+/* line 128, style.scss */
 a:hover img, a:focus img, a:active img {
   -webkit-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
 }
 
-/* line 131, style.scss */
+/* line 133, style.scss */
 i {
   font-style: normal;
 }
 
-/* line 135, style.scss */
+/* line 137, style.scss */
 strong {
   font-weight: normal;
 }
 
-/* line 139, style.scss */
+/* line 141, style.scss */
 small {
   font-size: 0.75em;
   line-height: 2em;
@@ -366,12 +370,12 @@ small {
   margin: 1em 0;
 }
 
-/* line 146, style.scss */
+/* line 148, style.scss */
 figure {
   text-align: center;
 }
 
-/* line 150, style.scss */
+/* line 152, style.scss */
 img {
   height: auto;
   max-width: 100%;
@@ -380,55 +384,60 @@ img {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 /* line 157, style.scss */
+img + h1, img + h2, img + h3, img + h4, img + h5, img + h6 {
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+
+/* line 164, style.scss */
 tr {
   border-top: 1px solid #CCC;
   background-color: white;
 }
-/* line 162, style.scss */
+/* line 169, style.scss */
 tr:nth-child(2n) {
   background-color: #F8F8F8;
 }
 
-/* line 167, style.scss */
+/* line 174, style.scss */
 th {
   border: 1px solid #CCC;
   font-weight: bold;
   padding: 0.375em 0.8125em;
 }
 
-/* line 173, style.scss */
+/* line 180, style.scss */
 td {
   border: 1px solid #CCC;
   padding: 0.375em 0.8125em;
 }
 
-/* line 178, style.scss */
+/* line 185, style.scss */
 .wrapper {
   margin: 0 auto;
   width: 90%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 178, style.scss */
+  /* line 185, style.scss */
   .wrapper {
     max-width: 768px;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 178, style.scss */
+  /* line 185, style.scss */
   .wrapper {
     max-width: 1024px;
   }
 }
 
-/* line 194, style.scss */
+/* line 201, style.scss */
 [role="banner"] {
   overflow: hidden;
   *zoom: 1;
   margin: 1em 0;
 }
-/* line 200, style.scss */
+/* line 207, style.scss */
 [role="banner"] h1 a {
   height: 150px;
   margin: 0 auto;
@@ -436,27 +445,27 @@ td {
   background: url("/wp-content/themes/logo24-bones/library/images/logo.png") no-repeat;
 }
 @media only screen and (min-width: 30em) {
-  /* line 200, style.scss */
+  /* line 207, style.scss */
   [role="banner"] h1 a {
     margin: 0;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 200, style.scss */
+  /* line 207, style.scss */
   [role="banner"] h1 a {
     float: left;
     margin-right: 1em;
   }
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-  /* line 200, style.scss */
+  /* line 207, style.scss */
   [role="banner"] h1 a {
     /* on retina, use image that's scaled by 2 */
     background: url("/wp-content/themes/logo24-bones/library/images/logo@2x.png") no-repeat;
     background-size: 150px 150px;
   }
 }
-/* line 226, style.scss */
+/* line 233, style.scss */
 [role="banner"] h2 {
   font-size: 1.375em;
   line-height: 2.18182em;
@@ -785,30 +794,37 @@ div.wpcf7-validation-errors, span.wpcf7-not-valid-tip {
   padding: 0.5em 1em;
 }
 
-/* line 238, style.scss */
+/* line 245, style.scss */
 article {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 243, style.scss */
+/* line 250, style.scss */
 .index-article {
   border-bottom: 1px solid #0b5394;
   margin-bottom: 1.75em;
   padding-bottom: 2.75em;
 }
-/* line 248, style.scss */
+/* line 255, style.scss */
 .index-article:last-child {
   border: none;
 }
 
-/* line 254, style.scss */
+/* line 261, style.scss */
+.index-single {
+  border-bottom: 1px solid #0b5394;
+  margin-bottom: 1.75em;
+  padding-bottom: 2.75em;
+}
+
+/* line 268, style.scss */
 .more {
   white-space: nowrap;
 }
 
 @media only screen and (min-width: 48em) {
-  /* line 259, style.scss */
+  /* line 273, style.scss */
   .featured-image {
     float: left;
     margin-top: 3.3125em;
@@ -817,40 +833,40 @@ article {
   }
 }
 
-/* line 271, style.scss */
+/* line 285, style.scss */
 .entry-content > p:first-child {
   margin-top: 0;
 }
 
 @media only screen and (min-width: 48em) {
-  /* line 277, style.scss */
+  /* line 291, style.scss */
   .entry-body {
     float: left;
     width: 79%;
   }
 }
 
-/* line 287, style.scss */
+/* line 300, style.scss */
 .byline {
   font-size: 0.75em;
   line-height: 2em;
 }
 
-/* line 292, style.scss */
+/* line 305, style.scss */
 .bones_page_navi, .nav-blog {
   overflow: hidden;
   *zoom: 1;
   margin-top: 1.5em;
 }
-/* line 298, style.scss */
+/* line 311, style.scss */
 .bones_page_navi .bpn-last-page-link a, .bones_page_navi .bpn-last-page-link a:link, .bones_page_navi .bpn-last-page-link a:visited, .nav-blog .bpn-last-page-link a, .nav-blog .bpn-last-page-link a:link, .nav-blog .bpn-last-page-link a:visited {
   width: 4em;
 }
-/* line 308, style.scss */
+/* line 321, style.scss */
 .bones_page_navi li, .nav-blog li {
   display: inline;
 }
-/* line 312, style.scss */
+/* line 325, style.scss */
 .bones_page_navi a, .bones_page_navi a:link, .bones_page_navi a:visited, .bones_page_navi .bpn-current, .nav-blog a, .nav-blog a:link, .nav-blog a:visited, .nav-blog .bpn-current {
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
@@ -867,24 +883,35 @@ article {
   text-align: center;
   line-height: 2em;
 }
-/* line 325, style.scss */
+/* line 338, style.scss */
 .bones_page_navi a:hover, .bones_page_navi a:focus, .bones_page_navi a:active, .bones_page_navi .bpn-current, .nav-blog a:hover, .nav-blog a:focus, .nav-blog a:active, .nav-blog .bpn-current {
   background: #062b4d;
 }
 
-/* line 332, style.scss */
+/* line 344, style.scss */
+.commentlist {
+  list-style: none;
+}
+/* line 347, style.scss */
+.commentlist li {
+  border-bottom: 1px dotted #0b5394;
+  margin-bottom: 2.8125em;
+  padding-bottom: 0.125em;
+}
+
+/* line 356, style.scss */
 .p404 {
   padding-top: 5em;
   text-align: center;
 }
-/* line 336, style.scss */
+/* line 360, style.scss */
 .p404 h1 {
   font-size: 8.3125em;
   line-height: 1.08271em;
   color: #0b5394;
   line-height: 1em;
 }
-/* line 342, style.scss */
+/* line 366, style.scss */
 .p404 h2 {
   font-size: 1.375em;
   line-height: 2.18182em;
@@ -892,19 +919,19 @@ article {
   line-height: 1em;
   margin-bottom: 1.5em;
 }
-/* line 349, style.scss */
+/* line 373, style.scss */
 .p404 p {
   font-size: 1em;
   line-height: 1.5em;
   color: #0b5394;
   line-height: 1.25em;
 }
-/* line 355, style.scss */
+/* line 379, style.scss */
 .p404 i {
   display: block;
 }
 
-/* line 361, style.scss */
+/* line 385, style.scss */
 [role='contentinfo'] {
   margin: 2em 0;
 }
