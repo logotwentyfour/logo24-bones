@@ -22,14 +22,9 @@
 // Other local sass partials
 @import "variables";
 @import "helpers";
+@import "type";
 @import "twitter-bootstrap";
 @import "gridset";
-
-// Compass variables for vertical rhythm
-$base-font-size: 16px;
-$base-line-height: 24px;
-@include establish-baseline;
-// Helper: @include adjust-font-size-to(22px);
 
 // http://paulirish.com/2012/box-sizing-border-box-ftw/
 * {
@@ -126,7 +121,7 @@ a, a:link, a:visited {
   @include transition(all, .2s, ease-in-out);
 }
 a:hover, a:focus, a:active {
-  color: $brand-color;
+  color: $hover-color;
   
   img {
     @include box-shadow(0px, 1px, 7px, rgba(0, 0, 0, 0.3));
@@ -143,6 +138,7 @@ strong {
 
 small {
   @include adjust-font-size-to(12px);
+  color: $text-color-subtle;
   display: block;
   margin: 1em 0;
 }
@@ -152,6 +148,7 @@ figure {
 }
 
 img {
+  height: auto;
   max-width: 100%;
   @include transition(all, .2s, ease-in-out);
 }
@@ -242,12 +239,32 @@ article {
   @include clearfix;
 }
 
-// <div> Appears on blog#show—index.php in the theme folder
+// <article>. A post on the blog index page
+.index-article {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: pem(28px);
+  padding-bottom: pem(44px);
+  
+  &:last-child {
+    border: none;
+  }
+}
+
+// <a> Reame more >> link—don't wrap
+.more {
+  white-space: nowrap;
+}
+
+// <div> Appears on blog#index—index.php in the theme folder
 .featured-image {
-  float: left;
-  margin-top: pem(53px);
-  padding-right: pem(40px);
-  width: 20%;
+  
+  // From medium screens and up left align the featured image.
+  @media only screen and (min-width: $break-medium) {
+    float: left;
+    margin-top: pem(53px);
+    padding-right: pem(40px);
+    width: 20%;
+  }
 }
 
 .entry-content {
@@ -256,14 +273,58 @@ article {
   }
 }
 
-// <div> Wraps .entry-content and .byline on blog#show—index.php
+// <div> Wraps .entry-content and .byline on blog#index—index.php
 .entry-body {
-  float: left;
-  width: 79%;
+  
+  // From medium screens and up right align the post content.
+  @media only screen and (min-width: $break-medium) {
+    float: left;
+    width: 79%;
+  }
+  
 }
 
 .byline {
   @include adjust-font-size-to(12px);
+}
+
+// Blog pagination
+.bones_page_navi, .nav-blog {
+  @include clearfix;
+  margin-top: 1.5em;
+  
+  // Widen the circle for the 'Last' link
+  .bpn-last-page-link {
+    a, a:link, a:visited {
+      width: 4em;
+    }
+  }
+  
+  // Hide Prev/Next text, just show arrows.
+  i {
+    @extend .visually-hidden;
+  }
+  
+  li {
+    display: inline;
+  }
+  
+  a, a:link, a:visited, .bpn-current {
+    @include border-radius(pem(16px));
+    background: $brand-color;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    margin-right: pem(10px);
+    height: pem(32px);
+    width: pem(32px);
+    text-align: center;
+    line-height: pem(32px);
+  }
+  
+  a:hover, a:focus, a:active, .bpn-current {
+    background: $hover-color;
+  }
 }
 
 

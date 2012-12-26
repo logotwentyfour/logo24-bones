@@ -345,7 +345,7 @@ function bones_page_navi($before = '', $after = '') {
 	if($start_page <= 0) {
 		$start_page = 1;
 	}
-	echo $before.'<nav class="page-navigation"><ol class="bones_page_navi clearfix">'."";
+	echo $before.'<nav class="page-navigation"><ol class="bones_page_navi">'."";
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
 		$first_page_text = "First";
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
@@ -383,7 +383,7 @@ function bones_filter_ptags_on_images($content){
 function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
+	return '...  <a class="more" href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
 }
 
 
