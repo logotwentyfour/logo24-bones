@@ -2,6 +2,13 @@
 
 <section role="main">
 
+  <?php /*
+  
+  If categories need to be excluded form the main blog,
+  e.g. when they're used for other content, -them here.
+  query_posts('cat=-13,-14'); 
+  
+  */ ?>
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" class="index-article" role="article">
@@ -12,8 +19,38 @@
           <?php if ( has_post_thumbnail() ) { ?>
             <a href='<?php the_permalink() ?>'
             rel='bookmark' title='<?php the_title(); ?>'>
+            
+            <?php
+
+              # get the thumbnail paths for the normal and retina
+              # blog index images
+              
+              # values can be added in functions.php so correct sizes are 
+              # auto-resized on upload to WP, if values aren't exact,
+              # WP will round to the nearest available size.
+
+              $normal = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 226,148 ), false, '' );
+
+              $retina = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 452,396 ), false, '' );
+
+            ?>
+            
               <figure>
-                 <?php the_post_thumbnail(); ?>
+               <div data-picture data-alt="<?php the_title(); ?>">
+
+                <?php // First, on the smallest non-retina screens... ?>
+                <div data-src="<?php echo $normal[0]; ?>"></div>
+                <?php // First, on the smallest retina screens... ?>
+                <div data-src="<?php echo $retina[0]; ?>" data-media="(min--moz-device-pixel-ratio: 1.3),
+                (-o-min-device-pixel-ratio: 2.6/2),
+                (-webkit-min-device-pixel-ratio: 1.3),
+                (min-device-pixel-ratio: 1.3),
+                (min-resolution: 1.3dppx)"></div>
+                
+                <noscript>
+                 <img src="<?php echo $normal[0]; ?>" alt="<?php the_title(); ?>">
+                </noscript>
+               </div>
               </figure>
             </a>
           <?php } ?>
