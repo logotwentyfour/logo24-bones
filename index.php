@@ -6,7 +6,8 @@
   
   If categories need to be excluded form the main blog,
   e.g. when they're used for other content, -them here.
-  query_posts('cat=-13,-14'); 
+  Should probably be consistent with index.php
+  query_posts('cat=-13,-14');
   
   */ ?>
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
