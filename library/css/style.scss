@@ -202,13 +202,17 @@ td {
   @include clearfix;
   margin: 1em 0;
   
+  // Use height and width of normal size logo, not the larger retina version.
+  $logo-width: 150px;
+  $logo-height: 150px;
+  
   // The logo
   h1 {
     a {
-      height: 150px;
+      height: $logo-height;
       margin: 0 auto;
       @extend .ir; // Hide the text and show a css background image instead
-      width: 150px;
+      width: $logo-width;
 
       // The logo is centred by default on small screens.
       // Above 480px left align
@@ -225,7 +229,7 @@ td {
         margin-right: 1em;
       }
 
-      @include image-2x-png(logo, 150px, 150px);
+      @include image-2x-png(logo, $logo-width, $logo-height);
     }
   }
   
