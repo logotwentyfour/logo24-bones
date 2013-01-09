@@ -77,8 +77,16 @@ select {
   @include type-regular;
 }
 
-// Textfield
-input[type="text"], textarea {
+#commentform {
+  ul {
+    list-style: none;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
   font-size: 1em;
   @include inline-block;
   padding: 0.5em 0.5em;

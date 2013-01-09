@@ -22,24 +22,6 @@ a.open-navigation {
   }
 }
 
-//The Nav/Menu bar
-// Hide sub menu by default
-.sub-menu {
-  display: none;
-  float: left;
-  margin: 0;
-  position: absolute;
-  text-align: left;
-  left: 0;
-  width: pem(200px);
-  z-index: 99999;
-  background-color: $brand-color;
-
-  a {
-    border-right: none !important;
-  }
-}
-
 .js .top-nav {
   @media only screen and (max-width: 768px) {
     display: none;
@@ -68,14 +50,20 @@ a.open-navigation {
     }
   }
 }
-.nav li:first-child { 
+.nav li:first-child {
   margin-left: 0;
 }
-
 
 // <ul> The Nav/Menu bar
 .top-nav, .footer-nav {
   background-color: $brand-color;
+  
+  & > li > a {
+    // (768px @ 16px)
+    @media only screen and (min-width: 48em) {
+      border-right: 1px solid $secondary-color;
+    }
+  }
   
   li {
     display: block;
@@ -107,8 +95,8 @@ a.open-navigation {
       
       // (768px @ 16px)
       @media only screen and (min-width: 48em) {
-        border-right: 1px solid $secondary-color;
         padding: pem(7px) pem(18px);
+        white-space: nowrap;
         width: auto;
       }
     }
@@ -117,4 +105,34 @@ a.open-navigation {
       background: $secondary-color;
     }
   }
+}
+
+// The Nav/Menu bar
+// Hide sub menu by default
+.nav > li > .sub-menu {
+  background-color: darken($brand-color,5%);
+  margin: 0;
+  min-width: pem(200px);
+  padding-left: 1em;
+  text-align: left;
+  
+  .top-nav & {
+    a, a:link, a:visited {
+      @include scale(padding-left, 18px, 13px);
+    }
+  }
+  
+  @media only screen and (min-width: $break-medium) {
+    display: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 99999;
+  }
+}
+
+.sub-menu .sub-menu {
+  margin: 0;
+  padding-left: 1em;
 }
