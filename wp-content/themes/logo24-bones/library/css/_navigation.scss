@@ -1,0 +1,138 @@
+// “Navigation” link at small screens to open navigation.
+// Toggle icon for menu. Visible only on small screens.
+
+// Only show if js is supported
+.js a.open-navigation {
+  @media only screen and (max-width: 768px) {
+    display: block;
+    margin-bottom: 1.0625em;
+  }
+}
+a.open-navigation {
+  background: $brand-color;
+  color: #fff;
+  display: none;
+  padding: pem(7px) 0;
+  text-align: center;
+  width: 100%;
+  
+  &:hover, &:active, &:focus {
+    background: $secondary-color;
+    color: #fff;
+  }
+}
+
+.js .top-nav {
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.top-nav {
+  margin-bottom: 2em;
+}
+
+// (768px @ 16px)
+@media only screen and (min-width: 769px) {
+  // Show nav on big screens and when js isn't supported.
+  .top-nav {
+    display: block !important; // To override js inline style
+    opacity: 1;
+  }
+}
+
+// (768px @ 16px)
+@media only screen and (min-width: 48em) {
+  // Fix weird spacing issue between items.
+  .top-nav, .footer-nav { 
+    & > li {
+      margin-left: pem(-4px);
+    }
+  }
+}
+.nav li:first-child {
+  margin-left: 0;
+}
+
+// <ul> The Nav/Menu bar
+.top-nav, .footer-nav {
+  background-color: $brand-color;
+  
+  & > li > a {
+    // (768px @ 16px)
+    @media only screen and (min-width: 48em) {
+      border-right: 1px solid $secondary-color;
+    }
+  }
+  
+  li {
+    display: block;
+    position: relative;
+    width: 100%;
+    
+    // (768px @ 16px)
+    @media only screen and (min-width: 48em) {
+      display: inline;
+      width: auto;
+    }
+    
+    // (768px @ 16px)
+    @media only screen and (min-width: 48em) {
+      // open the sub menu
+      &:hover {
+        .sub-menu {
+          display: block;
+          background-color: $brand-color;
+        }
+      }
+    }
+    
+    a, a:link, a:visited {
+      color: #fff;
+      @include inline-block;
+      padding: pem(7px) 0 pem(7px) pem(18px);
+      width: 100%;
+      
+      // (768px @ 16px)
+      @media only screen and (min-width: 48em) {
+        padding: pem(7px) pem(18px);
+        white-space: nowrap;
+        width: auto;
+      }
+    }
+    
+    a:hover, a:focus, a:active {
+      background: $secondary-color;
+    }
+  }
+}
+
+// The Nav/Menu bar
+// Hide sub menu by default
+.nav > li > .sub-menu {
+  background-color: darken($brand-color,5%);
+  margin: 0;
+  min-width: pem(200px);
+  padding-left: 1em;
+  text-align: left;
+  
+  .top-nav & {
+    a, a:link, a:visited {
+      @include scale(padding-left, 18px, 13px);
+    }
+  }
+  
+  @media only screen and (min-width: $break-medium) {
+    display: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 99999;
+  }
+}
+
+.sub-menu .sub-menu {
+  margin: 0;
+  padding-left: 1em;
+}

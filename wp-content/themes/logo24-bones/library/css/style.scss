@@ -1,0 +1,410 @@
+// Make sure to convert px to ems for production.
+
+// Compass Imports
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-sizing";
+@import "compass/css3/opacity";
+@import "compass/typography";
+
+// Use the Web Font ....
+/*@font-face {
+  font-family: 'HectorRounded';
+  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot');
+  src: url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.woff') format('woff'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.ttf') format('truetype'),
+       url('/wp-content/themes/logo24-bones/library/fonts/hectorrounded.svg#hectorrounded') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+// Other local sass partials
+@import "variables";
+@import "helpers";
+@import "type";
+@import "twitter-bootstrap";
+@import "gridset";
+
+// http://paulirish.com/2012/box-sizing-border-box-ftw/
+* {
+  @include box-sizing(border-box);
+}
+
+
+// The Basics
+body {
+  color: $text-color;
+  padding-bottom: 0.5em;
+  @include type-regular;
+}
+
+
+// General base text stuff.
+h1 {
+  @include adjust-font-size-to(36px);
+}
+
+h2 {
+  @include adjust-font-size-to(28px);
+}
+
+h3 {
+  @include adjust-font-size-to(24px);
+}
+
+h4 {
+  @include adjust-font-size-to(18px);
+  font-weight: bold;
+}
+
+h5 {
+  @include adjust-font-size-to(18px);
+  text-transform: uppercase;
+}
+
+h6 {
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $brand-color;
+  
+  & + p, & + ul, & + ol  {
+    margin-top: 1em;
+  }
+}
+
+p, ul, ol {
+  margin: 1.5em 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+dt {
+  font-style: italic;
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 1.5em;
+  margin-left: 1em;
+}
+
+// GitHub inspired
+pre {
+  background-color: #F8F8F8;
+  border: 1px solid #CCC;
+  overflow: auto;
+  padding: pem(6px) pem(10px);
+  @include border-radius(3px);
+}
+
+// <p> lead paragraph
+.lead {
+  @include adjust-font-size-to(20px);
+}
+
+blockquote {
+  margin-left: 2em;
+  font-style: italic;
+}
+
+// Base links
+a, a:link, a:visited {
+  color: $link-color;
+  text-decoration: none;
+  @include transition(all, .2s, ease-in-out);
+}
+a:hover, a:focus, a:active {
+  color: $hover-color;
+  
+  img {
+    @include box-shadow(0px, 1px, 7px, rgba(0, 0, 0, 0.3));
+  }
+}
+
+i {
+  font-style: normal;
+}
+
+strong {
+  font-weight: normal;
+}
+
+small {
+  @include adjust-font-size-to(12px);
+  color: $text-color-subtle;
+  display: block;
+  margin: 1em 0;
+}
+
+figure {
+  text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  @include transition(all, .2s, ease-in-out);
+  
+  & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
+    margin-top: 24px;
+    margin-top: 1.5rem;
+  }
+}
+
+// Tables (GitHub inspired default again)
+tr {
+  border-top: 1px solid #CCC;
+  background-color: white;
+  
+  // Alternate background color of every second line.
+  &:nth-child(2n) {
+  background-color: #F8F8F8;
+  }
+}
+
+th {
+  border: 1px solid #CCC;
+  font-weight: bold;
+  padding: pem(6px) pem(13px);
+}
+
+td {
+  border: 1px solid #CCC;
+  padding: pem(6px) pem(13px);
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  
+  // (480 @ 16px)
+  @media only screen and (min-width: 30em) {
+    max-width: 768px;
+  }
+  
+  // (768px @ 16px)
+  @media only screen and (min-width: 48em) {
+    max-width: 1024px;
+  }
+}
+
+// <header>
+[role="banner"] {
+  @include clearfix;
+  margin: 1em 0;
+  
+  // Use height and width of normal size logo, not the larger retina version.
+  $logo-width: 150px;
+  $logo-height: 150px;
+  
+  // The logo
+  h1 {
+    a {
+      height: $logo-height;
+      margin: 0 auto;
+      @extend .ir; // Hide the text and show a css background image instead
+      width: $logo-width;
+
+      // The logo is centred by default on small screens.
+      // Above 480px left align
+
+      // (480 @ 16px)
+      @media only screen and (min-width: 30em) {
+        margin: 0;
+      }
+
+      // Make subheading sit in line with the heading from medium screens and up.
+      // (768px @ 16px)
+      @media only screen and (min-width: 48em) {
+        float: left;
+        margin-right: 1em;
+      }
+
+      @include image-2x-png(logo, $logo-width, $logo-height);
+    }
+  }
+  
+  // The logo subheading.
+  h2 {
+    @include adjust-font-size-to(22px);
+  }
+}
+
+@import 'navigation';
+
+@import 'contact-form';
+
+
+// Blog Styles
+
+article {
+  @include clearfix;
+}
+
+// <article>. A post on the blog index page
+.index-article {
+  border-bottom: 1px solid $border-color;
+  @extend .clearfix;
+  margin-bottom: pem(28px);
+  padding-bottom: pem(44px);
+  
+  &:last-child {
+    border: none;
+  }
+}
+
+// <article>. A single blog post
+.index-single {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: pem(28px);
+  padding-bottom: pem(44px);
+}
+
+// <a> Reame more >> link—don't wrap
+.more {
+  white-space: nowrap;
+}
+
+// <div> Appears on blog#index—index.php in the theme folder
+.featured-image {
+  
+  // From medium screens and up left align the featured image.
+  @media only screen and (min-width: $break-medium) {
+    float: left;
+    margin-top: pem(53px);
+    padding-right: pem(40px);
+    width: 20%;
+  }
+}
+
+.entry-content {
+  & > p:first-child {
+    margin-top: 0;
+  }
+}
+
+// <div> Wraps .entry-content and .byline on blog#index—index.php
+.entry-body {
+  
+  // From medium screens and up right align the post content.
+  @media only screen and (min-width: $break-medium) {
+    float: left;
+    width: 79%;
+  }
+}
+
+.byline {
+  @include adjust-font-size-to(12px);
+}
+
+// Blog pagination
+.bones_page_navi, .nav-blog {
+  @include clearfix;
+  margin-top: 1.5em;
+  
+  // Widen the circle for the 'Last' link
+  .bpn-last-page-link {
+    a, a:link, a:visited {
+      width: 4em;
+    }
+  }
+  
+  // Hide Prev/Next text, just show arrows.
+  i {
+    @extend .visually-hidden;
+  }
+  
+  li {
+    display: inline;
+  }
+  
+  a, a:link, a:visited, .bpn-current {
+    @include border-radius(pem(16px));
+    background: $brand-color;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    margin-right: pem(10px);
+    height: pem(32px);
+    width: pem(32px);
+    text-align: center;
+    line-height: pem(32px);
+  }
+  
+  a:hover, a:focus, a:active, .bpn-current {
+    background: $hover-color;
+  }
+}
+
+// <ol> with comments
+.commentlist {
+  list-style: none;
+  
+  li {
+    border-bottom: 1px dotted $border-color;
+    margin-bottom: pem(45px);
+    padding-bottom: pem(2px);
+  }
+}
+
+// Single column template
+// Single column generic layout, narrow at large screens
+.single-wrapper {
+  
+  @media only screen and (min-width: $break-medium) {
+    margin: 0 auto;
+    width: 75%;
+  }
+}
+
+
+// 404 Styles
+.p404 {
+  padding-top: 5em;
+  text-align: center;
+  
+  h1 {
+    @include adjust-font-size-to(133px);
+    color: $brand-color;
+    line-height: 1em;
+  }
+  
+  h2 {
+    @include adjust-font-size-to(22px);
+    color: $brand-color;
+    line-height: 1em;
+    margin-bottom: 1.5em;
+  }
+  
+  p {
+    @include adjust-font-size-to(16px);
+    color: $brand-color;
+    line-height: 1.25em;
+  }
+  
+  i {
+    display: block;
+  }
+}
+
+//<footer>
+[role='contentinfo'] {
+  margin: 2em 0;
+}
+
+@import "ie";
+
+//PRINT STYLESHEET
+
+@media print {
+	@import "print";
+}
