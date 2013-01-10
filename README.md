@@ -1,7 +1,9 @@
-logo24-bones
+Logo24 Bones WordPress Starter Template
 ============
 
 LOGO24 WordPress Starter Theme - based on [Bones] (https://github.com/eddiemachado/bones)
+
+This is pretty heavy weight, it includes a full WP installation and database file to get up and running. [A video walkthrough is available on our Wiki] (http://wiki.logo24.com/index.php?title=Technical_Administration:How_to_set_up_WordPress_with_the_starter_template).
 
 This theme uses [Compass] (http://compass-style.org/).
 
