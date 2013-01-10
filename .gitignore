@@ -6,9 +6,6 @@ library/css/.sass-cache/
 .sass-cache/*
 .sass-cache/
 .htaccess
-wp-*.php
 xmlrpc.php
 sitemap.xml
 sitemap.xml.gz
-readme.html
-license.txt
