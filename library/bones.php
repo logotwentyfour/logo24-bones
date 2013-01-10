@@ -35,8 +35,6 @@ function bones_ahoy() {
     // enqueue base scripts and styles
     add_action('wp_enqueue_scripts', 'bones_scripts_and_styles', 999);
     // ie conditional wrapper
-    add_filter( 'style_loader_tag', 'bones_ie_conditional', 10, 2 );
-    // ie conditional wrapper to hide main stylesheet from IE6
     add_filter( 'style_loader_tag', 'bones_stylesheet', 10, 3 );
 
     // launching this stuff after theme setup
@@ -132,9 +130,6 @@ function bones_scripts_and_styles() {
     // register main stylesheet
     wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
-    // ie-only style sheet
-    wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
-
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
@@ -146,7 +141,6 @@ function bones_scripts_and_styles() {
     // enqueue styles and scripts
     wp_enqueue_script( 'bones-modernizr' );
     wp_enqueue_style( 'bones-stylesheet' );
-    wp_enqueue_style('bones-ie-only');
     /*
     I recommend using a plugin to call jQuery
     using the google cdn. That way it stays cached
@@ -156,14 +150,6 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'bones-js' );
 
   }
-}
-
-// adding the conditional wrapper around ie stylesheet
-// source: http://code.garyjones.co.uk/ie-conditional-style-sheets-wordpress/
-function bones_ie_conditional( $tag, $handle ) {
-	if ( 'bones-ie-only' == $handle )
-		$tag = '<!--[if lt IE 9]>' . "\n" . $tag . '<![endif]-->' . "\n";
-	return $tag;
 }
 
 // adding the conditional wrapper around main stylesheet to hide it from IE6

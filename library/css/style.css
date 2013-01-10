@@ -972,9 +972,8 @@ article {
   margin: 2em 0;
 }
 
-/*.lt-ie9 {
-
-}*/
+/* Only put IE Gridset in here
+other IE styles are contained in the main stylesheet. */
 @media print {
   /******************************************************************
   Site Name:
