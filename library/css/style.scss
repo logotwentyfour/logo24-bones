@@ -253,6 +253,7 @@ article {
 // <article>. A post on the blog index page
 .index-article {
   border-bottom: 1px solid $border-color;
+  @extend .clearfix;
   margin-bottom: pem(28px);
   padding-bottom: pem(44px);
   
@@ -352,6 +353,16 @@ article {
     border-bottom: 1px dotted $border-color;
     margin-bottom: pem(45px);
     padding-bottom: pem(2px);
+  }
+}
+
+// Single column template
+// Single column generic layout, narrow at large screens
+.single-wrapper {
+  
+  @media only screen and (min-width: $break-medium) {
+    margin: 0 auto;
+    width: 75%;
   }
 }
 
