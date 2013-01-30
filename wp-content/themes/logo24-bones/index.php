@@ -6,8 +6,12 @@
   
   If categories need to be excluded form the main blog,
   e.g. when they're used for other content, -them here.
-  Should probably be consistent with index.php
-  query_posts('cat=-13,-14');
+  
+  <?php $myCats = array(13,14); // Excluded Categories
+            query_posts($query_string); // Requested variables
+            if(have_posts()) :while (have_posts()) : the_post();
+            if(in_category($myCats)) continue;
+  ?>
   
   */ ?>
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
