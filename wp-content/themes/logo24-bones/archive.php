@@ -22,14 +22,6 @@
         <?php } ?>
       </header>
 
-      <?php /*
-
-      If categories need to be excluded form the main blog,
-      e.g. when they're used for other content, -them here.
-      Should probably be consistent with archives.php
-      query_posts('cat=-13,-14'); 
-
-      */ ?>
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <article id="post-<?php the_ID(); ?>" class="index-article" role="article">
