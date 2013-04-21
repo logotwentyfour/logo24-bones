@@ -1,0 +1,19 @@
+/* TEAM */
+	Graphic design: Steven Dunne
+	Contact: steven [at] logo24.com
+	Twitter: @sd5
+	From:Dublin, Ireland
+
+	Web designer: Shane Moloney
+	Contact: shane [at] logo24.com
+	Twitter: @s_moloney
+	From:Dublin, Ireland
+
+	Web designer: Paddy O'Hanlon
+	Contact: paddy [at] logo24.com
+	Twitter: @paddy
+	From:Dublin, Ireland (almost always somewhere else)
+
+/* SITE */
+	Doctype:HTML5
+	IDE: Sublime Text, Textmate, FileZilla, Transmit, Photoshop, Illustrator

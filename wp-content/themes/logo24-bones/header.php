@@ -10,6 +10,10 @@
   <meta charset="utf-8">
 
   <title><?php wp_title(''); ?></title>
+  
+  <!-- Author information -->
+  <meta name="author" content="Logo24.com" />
+  <link type="text/plain" rel="author" href="/humans.txt" />
 
   <!-- Google Chrome Frame for IE -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
