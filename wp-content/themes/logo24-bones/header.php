@@ -61,7 +61,7 @@
   
     <header role="banner">
       <h1>
-        <a href="/" title="Return to the home page"><?php bloginfo('name'); ?></a>
+        <a href="/"><?php bloginfo('name'); ?></a>
       </h1>
       <h2><?php bloginfo('description'); ?></h2>
       
