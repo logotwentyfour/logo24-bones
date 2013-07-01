@@ -60,12 +60,10 @@
   <div class="wrapper">
   
     <header role="banner">
-      <hgroup>
-        <h1>
-          <a href="/" title="Return to the home page"><?php bloginfo('name'); ?></a>
-        </h1>
-        <h2><?php bloginfo('description'); ?></h2>
-      </hgroup>
+      <h1>
+        <a href="/" title="Return to the home page"><?php bloginfo('name'); ?></a>
+      </h1>
+      <h2><?php bloginfo('description'); ?></h2>
       
       <?php /* if no subheading is required you can use this:
       
