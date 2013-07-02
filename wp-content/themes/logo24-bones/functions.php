@@ -267,5 +267,16 @@ class new_general_setting7 {
     }
 }
 
+//	Reduce nav classes, leaving only 'current-menu-item'
+function nav_class_filter( $var ) {
+return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
+}
+add_filter('nav_menu_css_class', 'nav_class_filter', 100, 1);
+
+// Remove wp_nav <li> IDs
+add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
+function my_css_attributes_filter($var) {
+  return is_array($var) ? array() : '';
+}
 
 ?>
