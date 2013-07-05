@@ -54,7 +54,7 @@
 <body>
   
   <!--[if lt IE 8]>
-    <p class="chromeframe">You are using an outdated browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="outdated-browser">You are using an outdated browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   
   <div class="wrapper">
