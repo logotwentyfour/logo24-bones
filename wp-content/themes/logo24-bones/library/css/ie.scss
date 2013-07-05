@@ -9,3 +9,16 @@ other IE styles are contained in the main stylesheet. */
 
 }
 
+// <p>, shown for IE7 and earlier
+.outdated-browser {
+  background: $color-alert-bg;
+  color: $color-alert-text;
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+  
+  a, a:link, a:visited {
+    color: $color-alert-text;
+    font-weight: bold;
+  }
+}
